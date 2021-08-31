@@ -10,8 +10,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerInParent="true">
 
 
         <EditText
@@ -22,24 +21,25 @@
             android:layout_marginTop="335dp"
             android:background="@drawable/et_style"
             android:backgroundTint="#ffffff"
-            android:padding="4dp"
             android:ems="10"
             android:hint="Username"
             android:inputType="textEmailAddress"
-            android:textColor="#000000"/>
+            android:padding="4dp"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/Password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/EmailAddress"
             android:background="@drawable/et_style"
             android:backgroundTint="#ffffff"
-            android:padding="5dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
+            android:padding="5dp"
             android:textColor="#000000"
             android:visibility="visible" />
 
@@ -47,17 +47,18 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/Password"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="435dp"
             android:backgroundTint="@android:color/transparent"
+            android:minHeight="0dp"
             android:text="Login" />
 
         <Button
             android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/login"
+            android:layout_centerHorizontal="true"
             android:backgroundTint="@android:color/transparent"
             android:minWidth="0dp"
             android:minHeight="0dp"

@@ -28,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0°"
+                android:textColor="#ffffff"
                 android:textSize="60sp"
                 android:layout_marginLeft="5dp"/>
 
@@ -36,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sunny"
+                android:textColor="#ffffff"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/current_temp"/>
@@ -45,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ottawa"
+                android:textColor="#ffffff"
                 android:textSize="40sp"
                 android:layout_centerVertical="true"
                 android:paddingLeft="40dp"
