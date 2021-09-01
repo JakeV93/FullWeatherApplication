@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +31,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class FrontPage extends AppCompatActivity {
     private TextView cityV, tempV, weatherV;
@@ -40,6 +43,8 @@ public class FrontPage extends AppCompatActivity {
     private View forecast_daily;
     private View forecast_hourly;
     private View page_front;
+    private ArrayList<String> temps = new ArrayList<>();
+    private ArrayList<String> weather = new ArrayList<>();
 
     private hourly_frag hourlyFrag;
     private weekly_frag weeklyFrag;
@@ -202,6 +207,7 @@ public class FrontPage extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
 
             weatherV.setText(weather);
             tempV.setText(temperature);

@@ -16,41 +16,48 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<String> weather = new ArrayList<>();
     private Context context;
 
-    public RecyclerViewAdapter(ArrayList<String> temps, ArrayList<String> weather, Context context) {
+    public RecyclerViewAdapter(Context context, ArrayList<String> temps, ArrayList<String> weather) {
         this.temps = temps;
         this.weather = weather;
         this.context = context;
     }
 
+    public RecyclerViewAdapter() {
+
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_hourly_frag, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hourly_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.temp.setText(temps.get(position));
-        holder.weather.setText(weather.get(position));
+        ViewHolder viewHolder = (ViewHolder)holder;
+        viewHolder.texttemp.setText(temps.get(position));
+        viewHolder.textweat.setText(weather.get(position));
     }
 
     @Override
     public int getItemCount() {
+
         return temps.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView temp;
-        TextView weather;
+        private TextView texttemp;
+        private TextView textweat;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
+            texttemp = (TextView)itemView.findViewById(R.id.hrly_temp);
+            textweat = (TextView)itemView.findViewById(R.id.hrly_weather);
 
-            temp = itemView.findViewById(R.id.hrly_temp);
-            weather = itemView.findViewById(R.id.hrly_weather);
         }
     }
 }

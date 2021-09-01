@@ -85,13 +85,14 @@
         <FrameLayout
             android:id="@+id/frame_cont"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@+id/tab_bar">
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/frag_cont"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent">
+            </androidx.fragment.app.FragmentContainerView>
         </FrameLayout>
 
 </RelativeLayout>
