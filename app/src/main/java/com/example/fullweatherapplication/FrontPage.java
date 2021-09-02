@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -74,6 +75,7 @@ public class FrontPage extends AppCompatActivity {
 
 
         mAuth = mAuth.getInstance();
+        RecyclerView();
 
         new retrieveWeather().execute();
 
@@ -119,7 +121,7 @@ public class FrontPage extends AppCompatActivity {
                 }
 
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frag_cont, fragment);
+                ft.replace(R.id.frame_cont, fragment);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
@@ -142,6 +144,14 @@ public class FrontPage extends AppCompatActivity {
         String cstring = df.format(kvalue);
 
         return cstring;
+    }
+
+    public void RecyclerView() {
+        hourly_frag hourlyfrag = new hourly_frag();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.frame_cont, hourlyfrag);
+        fragmentTransaction.commit();
     }
 
     @SuppressWarnings("deprecation")

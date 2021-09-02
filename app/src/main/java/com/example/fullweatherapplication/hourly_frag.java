@@ -12,11 +12,6 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link hourly_frag#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class hourly_frag extends Fragment {
 
     private RecyclerView recyclerView;
@@ -40,8 +35,8 @@ public class hourly_frag extends Fragment {
         weather.add("test3");
         temps.add("temps3");
 
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter();
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), weather, temps);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
 
