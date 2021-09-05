@@ -32,8 +32,17 @@ public class hourly_frag extends Fragment {
         weather.add("test2");
         temps.add("temps2");
 
-        weather.add("test3");
-        temps.add("temps3");
+        weather.add("test4");
+        temps.add("temps4");
+
+        weather.add("test5");
+        temps.add("temps5");
+
+        weather.add("test6");
+        temps.add("temps6");
+
+        weather.add("test7");
+        temps.add("temps7");
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), weather, temps);
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
